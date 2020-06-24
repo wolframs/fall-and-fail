@@ -7,16 +7,19 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rb2;
+    public Collider2D colli;
     public float faktor = 10;
+    protected bool grounded = true;
 
     // Start is called before the first frame update
     void Start()
     {
         init();
     }
-    void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D()
     {
         Debug.Log("Bodenhaftung");
+        grounded = true;
     }
     // Update is called once per frame
     void Update()
@@ -28,9 +31,10 @@ public class Player : MonoBehaviour
     {
         // Hier wird bei jedem Frame entsprechend dem Keyboardinput die neue Position berechnet
         float xInput = Input.GetAxis("Horizontal");
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && grounded)
         {
-            rb2.AddForce(new Vector2(0f, 200f));
+            rb2.AddForce(new Vector2(0f, 500f));
+            grounded = false;
         }
         float newpositionX = transform.position.x + xInput * Time.deltaTime * faktor;
 

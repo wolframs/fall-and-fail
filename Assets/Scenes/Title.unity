@@ -1036,9 +1036,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scriptCam: {fileID: 131647687}
-  stepFactor: 0.333
+  active: 1
+  stepFactor: 1
   stepper: 0.1
-  timer: 0.4
+  timer: 0.1
   upperLimit: 20
   lowerLimit: 2
 --- !u!1 &1777350666

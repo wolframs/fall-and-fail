@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Cam : MonoBehaviour
 {
-    public Camera scriptCam;
+    public Camera scriptCam = Camera.current;
+    public bool active = true;
     public float stepFactor = 1;
     public float stepper = 1;
     public float timer = 0.3f;
@@ -17,41 +18,36 @@ public class Cam : MonoBehaviour
     {
         // Get FoV
         currFoV = scriptCam.fieldOfView;
+        StartCoroutine(UpdateFoV(timer));
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator UpdateFoV(float timeOut)
     {
-        while (true)
+        while (active)
         {
-            StartCoroutine(UpdateFoV(timer));
-        }
-    }
+            yield return new WaitForSeconds(timeOut);
 
-    private IEnumerator UpdateFoV(float timeOut)
-    {
-        if(zoomIn && (currFoV > upperLimit))
-        {
-            zoomIn = false;
-        }
-        if(!zoomIn && (currFoV < lowerLimit))
-        {
-            zoomIn = true;
-        }
+            if (zoomIn && (currFoV > upperLimit))
+            {
+                zoomIn = false;
+            }
+            if (!zoomIn && (currFoV < lowerLimit))
+            {
+                zoomIn = true;
+            }
 
-        switch (zoomIn)
-        {
-            case true:
-                currFoV = currFoV + stepper * stepFactor;
-                break;
-            case false:
-                currFoV = currFoV - stepper * stepFactor;
-                break;
-        }                    
-        
-        // Update cam fov
-        scriptCam.fieldOfView = currFoV;
+            switch (zoomIn)
+            {
+                case true:
+                    currFoV = currFoV + stepper * stepFactor;
+                    break;
+                case false:
+                    currFoV = currFoV - stepper * stepFactor;
+                    break;
+            }
 
-        yield return new WaitForSeconds(timeOut);
+            // Update cam fov
+            scriptCam.fieldOfView = currFoV;
+        }
     }
 }

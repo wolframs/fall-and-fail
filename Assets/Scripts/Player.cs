@@ -14,7 +14,10 @@ public class Player : MonoBehaviour
     {
         init();
     }
-
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("Bodenhaftung");
+    }
     // Update is called once per frame
     void Update()
     {

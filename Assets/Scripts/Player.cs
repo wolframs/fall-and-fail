@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 
 
 public class Player : MonoBehaviour
@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public Collider2D colli;
     public float faktor = 10;
     protected bool grounded = true;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -24,11 +24,15 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        control();
+        if (transform.position.y <= -10)
+            die();
+        else
+            control(); 
     }
 
     void control()
     {
+       
         // Hier wird bei jedem Frame entsprechend dem Keyboardinput die neue Position berechnet
         float xInput = Input.GetAxis("Horizontal");
         if (Input.GetButtonDown("Jump") && grounded)
@@ -48,5 +52,10 @@ public class Player : MonoBehaviour
         // Hier wird initial die Position des Spielers gesetzt
         
         //TODO:
+    }
+
+    void die()
+    {
+        SceneManager.LoadScene("Title");
     }
 }

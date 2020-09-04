@@ -199,7 +199,7 @@ RectTransform:
   m_GameObject: {fileID: 131647686}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.6666666, y: 1.6666666, z: 1.6666666}
+  m_LocalScale: {x: 1.6666666, y: 1.6666666, z: 4.110151}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -234,7 +234,7 @@ RectTransform:
   m_GameObject: {fileID: 217015717}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.15, y: 1.15, z: 1}
   m_Children:
   - {fileID: 413075581}
   - {fileID: 374978821}
@@ -245,7 +245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 325, y: 257.3}
+  m_AnchoredPosition: {x: 325, y: 279.2}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &374978820
@@ -878,7 +878,7 @@ RectTransform:
   m_GameObject: {fileID: 774129527}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_Children:
   - {fileID: 1966490700}
   - {fileID: 1957695928}
@@ -888,7 +888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -64.8, y: -7.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &891334926
@@ -997,7 +997,7 @@ RectTransform:
   m_GameObject: {fileID: 958195481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1}
   m_Children:
   - {fileID: 1657334999}
   - {fileID: 1038571153}
@@ -1193,7 +1193,7 @@ RectTransform:
   m_GameObject: {fileID: 1248688766}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 1660354234}
   - {fileID: 722953517}
@@ -1508,9 +1508,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scriptCam: {fileID: 131647687}
   active: 1
-  stepFactor: 1
-  stepper: 0.2
-  timer: 0.1
+  smoothen: 1
+  smoothingAddend: 0.011
+  stepFactor: 0.33
+  stepper: 0.006
+  timer: 0.008
   upperLimit: 20
   lowerLimit: 2
 --- !u!114 &1700424150

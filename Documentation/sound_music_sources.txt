@@ -2,14 +2,42 @@
 #### Sound Sources ####
 #######################
 
-"Enchant" 				https://freesound.org/people/qubodup/sounds/202147/						SFX Magic
-"Magic"					https://freesound.org/people/RICHERlandTV/sounds/216089/				SFX Magic
-"Spell 00"				https://freesound.org/people/LittleRobotSoundFactory/sounds/270409/		SFX Magic 
-"FireSpell1"			https://freesound.org/people/alonsotm/sounds/396501/					SFX Magic 
-"Fire Magic"			https://freesound.org/people/qubodup/sounds/442872/						SFX Magic
-"Swoop 004"				https://freesound.org/people/yottasounds/sounds/174767/					SFX Action
-"Hop 8"					https://freesound.org/people/felixyadomi/sounds/456374/					Vocal Male
-"Jump"					https://freesound.org/people/acebrian/sounds/380471/					Vocal Male
+____________________________
+**** MAGIC ****
+
+"Enchant" 				https://freesound.org/people/qubodup/sounds/202147/
+"Magic"					https://freesound.org/people/RICHERlandTV/sounds/216089/
+"Spell 00"				https://freesound.org/people/LittleRobotSoundFactory/sounds/270409/
+"FireSpell1"			https://freesound.org/people/alonsotm/sounds/396501/
+"Fire Magic"			https://freesound.org/people/qubodup/sounds/442872/
+
+
+____________________________
+**** ACTION ****
+
+"Swoop 004"				https://freesound.org/people/yottasounds/sounds/174767/
+
+____________________________
+**** UI ***
+
+"UI Confirmation Altert C5"		https://freesound.org/people/InspectorJ/sounds/403018/
+"MenuChange"					https://freesound.org/people/victorium183/sounds/476816/
+"Sparkle"						https://freesound.org/people/Soughtaftersounds/sounds/145459/
+"Positive Warning"				https://freesound.org/people/Ultranova105/sounds/136755/
+"CS279 Selection Sound"			https://freesound.org/people/CS279/sounds/198448/
+"Menu Select 01"				https://freesound.org/people/LittleRobotSoundFactory/sounds/270534/
+"Mechanical Menu Btn Press"		https://freesound.org/people/Lavacoal123/sounds/427870/
+"Tish"							https://freesound.org/people/Soughtaftersounds/sounds/145446/
+"Wet"							https://freesound.org/people/Soughtaftersounds/sounds/145444/
+"Dry"							https://freesound.org/people/Soughtaftersounds/sounds/145443/
+"Dual Click"					https://freesound.org/people/Soughtaftersounds/sounds/145440/
+"Glass Click"					https://freesound.org/people/Soughtaftersounds/sounds/145441/
+
+
+____________________________
+**** VOCAL ****
+"Hop 8"					https://freesound.org/people/felixyadomi/sounds/456374/
+"Jump"					https://freesound.org/people/acebrian/sounds/380471/
 
 
 
@@ -20,6 +48,9 @@
 
 Title Scene: https://freemusicarchive.org/music/Yakov_Golman/Piano_album_1/Yakov_Golman_-_Japan
 (Piano, Calm, Instrumental)
+
+Boss Battle: https://www.bensound.com/royalty-free-music/track/epic
+(Pretty Overcooked Instrumental Epic)
 
 
 

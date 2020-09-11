@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
             }
             
         }
-        animate(xInput);
+        animate(xInput, grounded);
         if (Input.GetButtonDown("Jump") && grounded)
         {
             rb2.AddForce(new Vector2(0f, 200f));
@@ -77,8 +77,9 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("Title");
     }
 
-    void animate(float xInput)
+    void animate(float xInput, bool grounded)
     {
         this.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(xInput));
+        this.GetComponent<Animator>().SetBool("Jumps", !grounded);
     }
 }

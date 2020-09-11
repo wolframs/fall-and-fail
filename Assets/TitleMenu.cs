@@ -2,11 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-/// <summary>
-/// Wolfram, Stand 11.09.20
-/// </summary>
-
-public class MainMenu : MonoBehaviour
+public class TitleMenu : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject optionsMenu;
@@ -69,7 +65,7 @@ public class MainMenu : MonoBehaviour
 
     void PlayGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("game");
     }
 
     void Quit()

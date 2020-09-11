@@ -1,6 +1,6 @@
-#######################
-#### Sound Sources ####
-#######################
+												#######################
+												#### Sound Sources ####
+												#######################
 
 ____________________________
 **** MAGIC ****
@@ -42,9 +42,11 @@ ____________________________
 
 
 
-########################
-#### Music Sources  ####
-########################
+
+
+												########################
+												#### Music Sources  ####
+												########################
 
 Title Scene: https://freemusicarchive.org/music/Yakov_Golman/Piano_album_1/Yakov_Golman_-_Japan
 (Piano, Calm, Instrumental)
@@ -77,3 +79,15 @@ https://freemusicarchive.org/music/Lobo_Loco
 
 https://freemusicarchive.org/music/Komiku
 (Classic Game Music)
+
+
+
+
+												##########################
+												#### Graphic Sources  ####
+												##########################
+
+
+
+https://thewristbandit.itch.io/boxes-be-gone
+https://vectorpixelstar.itch.io/mega-pixel-art-32x32-px-icons-sprite-sheet

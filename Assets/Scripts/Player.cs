@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter2D()
     {
-        Debug.Log("Bodenhaftung");
+        Debug.Log("Bodenhaftung" + Time.time.ToString());
         grounded = true;
     }
     // Update is called once per frame
@@ -53,12 +53,12 @@ public class Player : MonoBehaviour
             }
             
         }
-        animate(xInput, grounded);
         if (Input.GetButtonDown("Jump") && grounded)
         {
             rb2.AddForce(new Vector2(0f, 200f));
             grounded = false;
         }
+        animate(xInput, grounded);
         float newpositionX = transform.position.x + xInput * Time.deltaTime * faktor;
         transform.position = new Vector3(newpositionX, transform.position.y, 0);
     }

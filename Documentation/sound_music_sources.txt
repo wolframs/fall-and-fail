@@ -1,0 +1,22 @@
+#######################
+#### Sound Sources ####
+#######################
+
+"Enchant" 				https://freesound.org/people/qubodup/sounds/202147/						SFX Magic
+"Magic"					https://freesound.org/people/RICHERlandTV/sounds/216089/				SFX Magic
+"Spell 00"				https://freesound.org/people/LittleRobotSoundFactory/sounds/270409/		SFX Magic 
+"FireSpell1"			https://freesound.org/people/alonsotm/sounds/396501/					SFX Magic 
+"Fire Magic"			https://freesound.org/people/qubodup/sounds/442872/						SFX Magic
+"Swoop 004"				https://freesound.org/people/yottasounds/sounds/174767/					SFX Action
+"Hop 8"					https://freesound.org/people/felixyadomi/sounds/456374/					Vocal Male
+"Jump"					https://freesound.org/people/acebrian/sounds/380471/					Vocal Male
+
+
+
+
+########################
+#### Music Sources  ####
+########################
+
+Title Scene: https://freemusicarchive.org/music/Yakov_Golman/Piano_album_1/Yakov_Golman_-_Japan
+(Piano, Calm, Instrumental)

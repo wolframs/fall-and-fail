@@ -58,9 +58,18 @@ public class Player : MonoBehaviour
             rb2.AddForce(new Vector2(0f, 200f));
             grounded = false;
         }
-        animate(xInput, grounded);
-        float newpositionX = transform.position.x + xInput * Time.deltaTime * faktor;
-        transform.position = new Vector3(newpositionX, transform.position.y, 0);
+        
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
+        {
+            float newpositionX = transform.position.x + xInput * Time.deltaTime * faktor;
+            transform.position = new Vector3(newpositionX, transform.position.y, 0);
+            animate(xInput, !grounded);
+        }
+        else
+        {
+            animate(0, !grounded);
+        }
+
     }
 
 
@@ -77,7 +86,7 @@ public class Player : MonoBehaviour
         SceneManager.LoadScene("Title");
     }
 
-    void animate(float xInput, bool grounded)
+    void animate(float xInput, bool jump)
     {
         this.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(xInput));
         this.GetComponent<Animator>().SetBool("Jumps", !grounded);

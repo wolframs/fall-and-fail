@@ -10,7 +10,7 @@ using UnityEngine;
 /// </summary>
 public class Cam : MonoBehaviour
 {
-    public Camera scriptCam = Camera.current;
+    public Camera scriptCam;
     public bool active = true;
     public bool smoothen = true;
     public float smoothingAddend = 0.1f;

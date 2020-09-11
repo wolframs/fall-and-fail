@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D rb2;
     public Collider2D colli;
+    public bool goesleft;
     public float faktor = 10;
     protected bool grounded = true;
     
@@ -35,13 +36,30 @@ public class Player : MonoBehaviour
        
         // Hier wird bei jedem Frame entsprechend dem Keyboardinput die neue Position berechnet
         float xInput = Input.GetAxis("Horizontal");
+        if (xInput != 0)
+        {
+            bool xgoesleft = goesleft;
+            if (xInput < 0 && !goesleft)
+            {
+                goesleft = true;
+            }
+            else if (xInput >= 0)
+            {
+                goesleft = false;
+            }
+            if (goesleft != xgoesleft)
+            {
+                transform.localScale = new Vector3((transform.localScale.x * (-1)), transform.localScale.y, transform.localScale.z);
+            }
+            
+        }
+        animate(xInput);
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            rb2.AddForce(new Vector2(0f, 500f));
+            rb2.AddForce(new Vector2(0f, 200f));
             grounded = false;
         }
         float newpositionX = transform.position.x + xInput * Time.deltaTime * faktor;
-
         transform.position = new Vector3(newpositionX, transform.position.y, 0);
     }
 
@@ -50,12 +68,17 @@ public class Player : MonoBehaviour
     void init()
     {
         // Hier wird initial die Position des Spielers gesetzt
-        
+        goesleft = false;
         //TODO:
     }
 
     void die()
     {
         SceneManager.LoadScene("Title");
+    }
+
+    void animate(float xInput)
+    {
+        this.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(xInput));
     }
 }

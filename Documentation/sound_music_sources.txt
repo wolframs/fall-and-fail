@@ -17,8 +17,14 @@ ____________________________
 
 "Swoop 004"				https://freesound.org/people/yottasounds/sounds/174767/
 
+
 ____________________________
-**** UI ***
+**** WORLD OBJECTS ****
+
+"coin 2"				https://freesound.org/people/robbeman/sounds/495642/
+
+____________________________
+**** UI ****
 
 "UI Confirmation Altert C5"		https://freesound.org/people/InspectorJ/sounds/403018/
 "MenuChange"					https://freesound.org/people/victorium183/sounds/476816/

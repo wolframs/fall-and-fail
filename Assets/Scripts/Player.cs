@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter2D()
     {
-        Debug.Log("Bodenhaftung" + Time.time.ToString());
+        Debug.Log("Bodenhaftung : " + Time.time.ToString());
         grounded = true;
     }
     // Update is called once per frame

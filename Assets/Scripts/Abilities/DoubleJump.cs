@@ -26,9 +26,7 @@ public class DoubleJump : Ability
         grounded = GameObject.Find("GameState").GetComponent<GameState>().playerGrounded;
         if (!grounded && !inProgress)
         {
-            Debug.Log(_player);
-            Rigidbody2D rb2 = _player.GetComponent<Rigidbody2D>();
-            rb2.AddForce(new Vector2(0f, 200f));
+            _player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 200f));
         }
     }
 }

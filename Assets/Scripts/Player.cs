@@ -10,7 +10,13 @@ public class Player : MonoBehaviour
     public Collider2D colli;
     public bool goesleft;
     public float faktor = 10;
-    public bool grounded = true;
+    public bool grounded
+    {
+        get { return gameState.playerGrounded; }
+        set { gameState.playerGrounded = value; }
+    }
+
+    private GameState gameState;
     
     // Start is called before the first frame update
     void Start()
@@ -76,6 +82,10 @@ public class Player : MonoBehaviour
 
     void init()
     {
+        // WSI: "GameState" holen
+        gameState = GameObject.Find("GameState").GetComponent<GameState>();
+        if (gameState is null)
+            Debug.LogError("GameState GameObject oder Script wurde nicht gefunden.");
         // Hier wird initial die Position des Spielers gesetzt
         goesleft = false;
         //TODO:

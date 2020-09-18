@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public Collider2D colli;
     public bool goesleft;
     public float faktor = 10;
-    protected bool grounded = true;
+    public bool grounded = true;
     
     // Start is called before the first frame update
     void Start()

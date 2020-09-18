@@ -1288,6 +1288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerGrounded: 1
+  jumpForceY: 150
 --- !u!4 &1497527485
 Transform:
   m_ObjectHideFlags: 0

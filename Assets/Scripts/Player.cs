@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
     }
 
     private GameState gameState;
+    private float jumpForceY;
     
     // Start is called before the first frame update
     void Start()
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            rb2.AddForce(new Vector2(0f, 200f));
+            rb2.AddForce(new Vector2(0f, jumpForceY));
             grounded = false;
         }
         
@@ -82,10 +83,14 @@ public class Player : MonoBehaviour
 
     void init()
     {
-        // WSI: "GameState" holen
+        // "GameState" holen
         gameState = GameObject.Find("GameState").GetComponent<GameState>();
         if (gameState is null)
             Debug.LogError("GameState GameObject oder Script wurde nicht gefunden.");
+        
+        // Jump Force holen
+        jumpForceY = GameObject.Find("GameState").GetComponent<GameState>().jumpForceY;
+
         // Hier wird initial die Position des Spielers gesetzt
         goesleft = false;
         //TODO:

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameState : MonoBehaviour
+public static class GameState
 {
-    public bool playerGrounded;
-    public float jumpForceY;
+    public static bool playerGrounded;
+    public static bool inProgress;
+    public static float jumpForceY = 200;
 }

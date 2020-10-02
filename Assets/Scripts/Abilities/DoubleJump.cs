@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class DoubleJump : Ability
 {
-    public bool inProgress;
+    public bool inProgress
+    {
+        get { return GameState.inProgress; }
+        set { GameState.inProgress = value; }
+    }
     private bool grounded;
 
     public void Awake()
@@ -23,10 +27,22 @@ public class DoubleJump : Ability
 
     public override void Use()
     {
-        grounded = GameObject.Find("GameState").GetComponent<GameState>().playerGrounded;
-        if (!grounded && !inProgress)
+        grounded = GameState.playerGrounded;
+        if (Input.GetButtonDown("Jump") && grounded)
         {
-            _player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, 200f));
+            _player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, GameState.jumpForceY));
+            GameState.playerGrounded = false;
         }
+        else if (!grounded && !inProgress)
+        {
+            inProgress = true;
+            _player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, GameState.jumpForceY));
+        }
+        animate(0, !GameState.playerGrounded);
+    }
+    void animate(int xInput, bool jump)
+    {
+        this.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(xInput));
+        this.GetComponent<Animator>().SetBool("Jumps", !grounded);
     }
 }

@@ -12,11 +12,15 @@ public class Player : MonoBehaviour
     public float faktor = 10;
     public bool grounded
     {
-        get { return gameState.playerGrounded; }
-        set { gameState.playerGrounded = value; }
+        get { return GameState.playerGrounded; }
+        set { GameState.playerGrounded = value; }
     }
 
-    private GameState gameState;
+    public bool inProgress
+    {
+        get { return GameState.inProgress; }
+        set { GameState.inProgress = value; }
+    }
     private float jumpForceY;
     
     // Start is called before the first frame update
@@ -28,6 +32,7 @@ public class Player : MonoBehaviour
     {
         Debug.Log("Bodenhaftung : " + Time.time.ToString());
         grounded = true;
+        inProgress = false;
     }
     // Update is called once per frame
     void Update()
@@ -60,11 +65,7 @@ public class Player : MonoBehaviour
             }
             
         }
-        if (Input.GetButtonDown("Jump") && grounded)
-        {
-            rb2.AddForce(new Vector2(0f, jumpForceY));
-            grounded = false;
-        }
+        
         
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
         {
@@ -83,27 +84,17 @@ public class Player : MonoBehaviour
 
     void init()
     {
-        // "GameState" holen
-        gameState = GameObject.Find("GameState").GetComponent<GameState>();
-        if (gameState is null)
-            Debug.LogError("GameState GameObject oder Script wurde nicht gefunden.");
-        
-        // Jump Force holen
-        jumpForceY = GameObject.Find("GameState").GetComponent<GameState>().jumpForceY;
-
         // Hier wird initial die Position des Spielers gesetzt
         goesleft = false;
-        //TODO:
     }
 
     void die()
     {
         SceneManager.LoadScene("Title");
     }
-
     void animate(float xInput, bool jump)
     {
         this.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(xInput));
-        this.GetComponent<Animator>().SetBool("Jumps", !grounded);
+        this.GetComponent<Animator>().SetBool("Jumps", !GameState.playerGrounded);
     }
 }

@@ -219,8 +219,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac2c4e41a3d61f46930f1b9886d6644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerGrounded: 1
-  jumpForceY: 25
 --- !u!4 &125855354
 Transform:
   m_ObjectHideFlags: 0
@@ -1652,8 +1650,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.055917025, y: 0.5579283}
-  m_EdgeRadius: 0.05
+  m_Size: {x: 0.055917025, y: 0.34}
+  m_EdgeRadius: 0.1
 --- !u!114 &1029833943
 MonoBehaviour:
   m_ObjectHideFlags: 0

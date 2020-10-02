@@ -40,6 +40,7 @@ public class DoubleJump : Ability
         }
         animate(0, !GameState.playerGrounded);
     }
+
     void animate(int xInput, bool jump)
     {
         this.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(xInput));

@@ -8,7 +8,7 @@ public class GameState : MonoBehaviour
     public static GameState instance = null;
 
     public static bool playerGrounded;
-    public static bool inProgress;
+    public static bool jumpInProgress;
     public static float jumpForceY = 200;
 
     private void Awake()

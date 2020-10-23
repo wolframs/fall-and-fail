@@ -6,8 +6,8 @@ public class DoubleJump : Ability
 {
     public bool inProgress
     {
-        get { return GameState.inProgress; }
-        set { GameState.inProgress = value; }
+        get { return GameState.jumpInProgress; }
+        set { GameState.jumpInProgress = value; }
     }
     private bool grounded;
 

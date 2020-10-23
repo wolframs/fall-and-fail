@@ -15,7 +15,13 @@ public class DoubleJump : Ability
     public void Awake()
     {
         inProgress = false;
-        _player = GameObject.Find("Player");
+        this._player = GameObject.Find("Player");
+
+        // Ability Properties
+        this.abilityName = "Double Jump";
+        this.inertia = Inertia.Instant;
+        this.target = Target.Self;
+        this.type = AbilityClass.Movement;
     }
 
     public void Update()
@@ -40,10 +46,10 @@ public class DoubleJump : Ability
             inProgress = true;
             _player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, GameState.jumpForceY));
         }
-        animate(0, !grounded);
+        Animate(0, !grounded);
     }
 
-    void animate(int xInput, bool jump)
+    private void Animate(int xInput, bool jump)
     {
         this.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(xInput));
         this.GetComponent<Animator>().SetBool("Jumps", !grounded);

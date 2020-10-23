@@ -24,6 +24,5 @@ public class CoinManagement : MonoBehaviour
     void CountCoins()
     {
         CurrentCounter = gameObject.transform.childCount;
-        Debug.Log(InitialCounter - CurrentCounter);
     }
 }

@@ -22,6 +22,7 @@ public class DoubleJump : Ability
         this.inertia = Inertia.Instant;
         this.target = Target.Self;
         this.type = AbilityClass.Movement;
+        this.staminaCost = 5;
     }
 
     public void Update()

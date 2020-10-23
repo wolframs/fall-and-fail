@@ -14,7 +14,7 @@ public abstract class Ability : MonoBehaviour
     public float animationTime;
 
     public int healthChange;
-    public int manaCost;
+    public int staminaCost;
 
     [HideInInspector]
     public GameObject _player;

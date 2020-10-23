@@ -26,6 +26,7 @@ public class SwordSlash : Ability
         this.target = Target.Enemy;
         this.healthChange = 20;
         this.animationTime = 0.15f;
+        this.staminaCost = 2;
     }
 
     private void Update()

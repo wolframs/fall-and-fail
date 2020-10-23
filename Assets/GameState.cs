@@ -12,6 +12,8 @@ public class GameState : MonoBehaviour
     public static bool slashInProgress;
 
     public static float jumpForceY = 200;
+    public static int playerHP = 100;
+    public static int playerStamina = 100;
 
     private void Awake()
     {

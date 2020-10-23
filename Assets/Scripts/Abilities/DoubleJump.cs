@@ -1,6 +1,4 @@
-﻿// Wolfram Siener
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DoubleJump : Ability
 {

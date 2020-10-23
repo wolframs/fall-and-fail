@@ -5,13 +5,13 @@ using UnityEngine;
 public abstract class Ability : MonoBehaviour
 {
     public string abilityName;
-    public bool active;
 
     public Target target;
     public AbilityClass type;
     public Inertia inertia;
     public int inertiaTickCount;
     public float inertiaTickRate;
+    public float animationTime;
 
     public int healthChange;
     public int manaCost;
@@ -37,12 +37,6 @@ public abstract class Ability : MonoBehaviour
         Instant,
         DamageOverTime
     }
-
-    public void SetActive(bool _active)
-    {
-        active = _active;
-    }
-
     public virtual void Use()
     {
 

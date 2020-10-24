@@ -4,7 +4,6 @@ using UnityEngine;
 
 
 /// <summary>
-/// Wolfram:
 /// Stellt Funktionalität bereit, um Kamera FoV laufend zu manipulieren und ggf. auf aktueller Position basiert
 /// zu verlangsamen und zu beschleunigen (smoothing).
 /// </summary>

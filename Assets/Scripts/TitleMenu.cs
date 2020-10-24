@@ -2,6 +2,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Der enum CallOption hier ist etwas unnötig für die geringe Komplexität, aber hey, "doing it right from the start" ist auch ein Motto.
+/// </summary>
+
 public class TitleMenu : MonoBehaviour
 {
     public GameObject mainMenu;

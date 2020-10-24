@@ -71,13 +71,11 @@ public class GameState : MonoBehaviour
             }
 
             // PlayerPfers holen
-            musicVolume = PlayerPrefs.GetFloat("musicVolume");
+            musicVolume = PlayerPrefs.GetFloat("volumeMusic", -5f);
             if (musicVolume == 0)
                 musicVolume = 0.8f;
-            sfxVolume = PlayerPrefs.GetFloat("sfxVolume");
-            if (sfxVolume == 0)
-                sfxVolume = 0.8f;
-            difficulty = PlayerPrefs.GetInt("difficulty"); // Hier ist ein initialer Wert von 0 ok, weil das die normale Schwierigkeitsstufe darstellt
+            sfxVolume = PlayerPrefs.GetFloat("volumeSFX", -5f);
+            difficulty = PlayerPrefs.GetInt("difficulty", 0);
 
             Debug.Log("Player Prefs: musicVolume - " + musicVolume + ", sfxVolume - " + sfxVolume + ", difficulty - " + difficulty + ".");
 

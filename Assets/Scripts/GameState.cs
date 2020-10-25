@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -56,45 +57,47 @@ public class GameState : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-
-            // HP & Stamina initialisieren
-            try
-            {
-                HPFiller = GameObject.Find("HPFiller").GetComponent<UnityEngine.UI.Image>();
-                StaminaFiller = GameObject.Find("StaminaFiller").GetComponent<UnityEngine.UI.Image>();
-                playerHP = 100;
-                playerStamina = 100;
-            }
-            catch
-            {
-                Debug.LogWarning("HPFiller and StaminaFiller not found.");
-            }
-
-            // PlayerPfers holen
-            musicVolume = PlayerPrefs.GetFloat("volumeMusic", -5f);
-            if (musicVolume == 0)
-                musicVolume = 0.8f;
-            sfxVolume = PlayerPrefs.GetFloat("volumeSFX", -5f);
-            difficulty = PlayerPrefs.GetInt("difficulty", 0);
-
-            Debug.Log("Player Prefs: musicVolume - " + musicVolume + " | sfxVolume - " + sfxVolume + " | difficulty - " + difficulty);
-
-            // Audio Mixer getten und Lautstärke setzen
-            if (musicMixer != null && sfxMixer != null)
-            {
-                musicMixer.SetFloat("volume", musicVolume);
-                sfxMixer.SetFloat("volume", sfxVolume);
-            }
-            else
-            {
-                Debug.LogError("Mixers not found!");
-            }
         }
         // Ggf. verhindern, dass die Instanzen mehrfach erstellt werden, wenn das Script mehr als einmal in einer Szene eingebunden ist
         else if (instance != this)
             Destroy(gameObject);
 
-        // Verhindert, dass das Script sich selbst abschießt, bevor es durch alle Eventualität gesteppt ist
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
+    }
+
+    private void Start()
+    {
+        // HP & Stamina initialisieren
+        try
+        {
+            HPFiller = GameObject.Find("HPFiller").GetComponent<UnityEngine.UI.Image>();
+            StaminaFiller = GameObject.Find("StaminaFiller").GetComponent<UnityEngine.UI.Image>();
+            playerHP = 100;
+            playerStamina = 100;
+        }
+        catch
+        {
+            Debug.LogWarning("HPFiller and StaminaFiller not found.");
+        }
+
+        // PlayerPfers holen
+        musicVolume = PlayerPrefs.GetFloat("volumeMusic", -5f);
+        if (musicVolume == 0)
+            musicVolume = 0.8f;
+        sfxVolume = PlayerPrefs.GetFloat("volumeSFX", -5f);
+        difficulty = PlayerPrefs.GetInt("difficulty", 0);
+
+        Debug.Log("Player Prefs: musicVolume - " + musicVolume + " | sfxVolume - " + sfxVolume + " | difficulty - " + difficulty);
+
+        // Audio Mixer getten und Lautstärke setzen
+        if (musicMixer != null && sfxMixer != null)
+        {
+            musicMixer.SetFloat("volume", musicVolume);
+            sfxMixer.SetFloat("volume", sfxVolume);
+        }
+        else
+        {
+            Debug.LogError("Mixers not found!");
+        }
     }
 }

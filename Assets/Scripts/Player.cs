@@ -10,6 +10,10 @@ public class Player : MonoBehaviour
     public Collider2D colli;
     public bool goesleft;
     public float faktor = 10;
+
+    // Die "Death Threshold" Höhe gibt an, ab welcher Position der Spieler als "heruntergefallen" gilt
+    private float deathThreshold;
+
     public bool grounded
     {
         get { return GameState.playerGrounded; }
@@ -37,7 +41,8 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y <= -10)
+        //if (transform.position.y <= -10)
+        if (transform.position.y <= deathThreshold)
             die();
         else
             control(); 
@@ -84,13 +89,17 @@ public class Player : MonoBehaviour
 
     void init()
     {
-        // Hier wird initial die Position des Spielers gesetzt
+        // Hier wird initial die Ausrichtung des Spielers gesetzt
         goesleft = false;
+
+        // Berechnung des "Death Thresholds", also der y-Position, ab der der Spieler als Gefallen gilt
+        float initialHeight = transform.position.y;
+        deathThreshold = initialHeight - 12;
     }
 
     void die()
     {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("GameOver");
     }
     void animate(float xInput, bool jump)
     {

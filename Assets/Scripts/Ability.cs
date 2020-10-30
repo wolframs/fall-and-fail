@@ -39,6 +39,6 @@ public abstract class Ability : MonoBehaviour
     }
     public virtual void Use()
     {
-
+        GameState.playerStamina -= staminaCost;
     }
 }

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CoinManagement : MonoBehaviour
 {
-    public GameObject gameObject;
     public int InitialCounter;
     public int CurrentCounter;
     // Start is called before the first frame update

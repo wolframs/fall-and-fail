@@ -23,7 +23,10 @@ public class DoubleJump : Ability
         this.inertia = Inertia.Instant;
         this.target = Target.Self;
         this.type = AbilityClass.Movement;
-        this.staminaCost = 5;
+        if (GameState.challenging)
+            this.staminaCost = 10;
+        else
+            this.staminaCost = 5;
     }
 
     public void Update()
@@ -47,6 +50,7 @@ public class DoubleJump : Ability
             _player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);
             inProgress = true;
             _player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, GameState.jumpForceY));
+            GameState.playerStamina -= staminaCost;
         }
         Animate(0, !grounded);
     }

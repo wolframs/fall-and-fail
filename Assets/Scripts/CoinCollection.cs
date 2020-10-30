@@ -15,6 +15,7 @@ public class CoinCollection : MonoBehaviour
     void OnTriggerEnter2D()
     {
         Destroy(gameobject);
+        GameObject.Find("AudioMan").GetComponent<AudioManager>().Play("CoinPickup");
     }
 
     // Update is called once per frame

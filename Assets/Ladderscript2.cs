@@ -41,7 +41,11 @@ public class Ladderscript2 : MonoBehaviour
         if (isColliding && Input.GetKey(KeyCode.UpArrow))
         {
             playerSprite.GetComponent<Rigidbody2D>().gravityScale = 0;
-            playerSprite.transform.position = new Vector2(playerSprite.transform.position.x, (playerSprite.transform.position.y + 0.5f))
+            playerSprite.GetComponent<Rigidbody2D>().velocity = new Vector3(playerSprite.GetComponent<Rigidbody2D>().velocity.x, 1.5f, 0f);
+        }
+        else
+        {
+            playerSprite.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }
 }

@@ -1212,7 +1212,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 442764545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b623c201bf1890342a89873d08a2fd5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 634bfa9125594f34ca0df695742d6431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &442764548
@@ -1225,10 +1225,10 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.034904122, y: -1.7632251}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -1239,7 +1239,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.90563965, y: 0.34350872}
+  m_Size: {x: 0.9754479, y: 3.8699589}
   m_EdgeRadius: 0.025
 --- !u!1 &450940701
 GameObject:
@@ -3294,7 +3294,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 537604357}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b623c201bf1890342a89873d08a2fd5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 634bfa9125594f34ca0df695742d6431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &537604360
@@ -3608,7 +3608,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 715753558}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b623c201bf1890342a89873d08a2fd5b, type: 3}
+  m_Script: {fileID: 11500000, guid: 634bfa9125594f34ca0df695742d6431, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!61 &715753561

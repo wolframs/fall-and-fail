@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
         
         
         //if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow))
-        if (Input.GetKey("Horizontal"))
+        if (Input.GetAxis("Horizontal") != 0)
         {
             float newpositionX = transform.position.x + xInput * Time.deltaTime * faktor;
             transform.position = new Vector3(newpositionX, transform.position.y, 0);

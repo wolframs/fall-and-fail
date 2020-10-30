@@ -34,6 +34,7 @@ public class Player : MonoBehaviour
     }
     void OnTriggerEnter2D()
     {
+        // Hier wird die Kollision mit dem Boden registriert und der Doppelsprung zurückgesetzt
         Debug.Log("Bodenhaftung : " + Time.time.ToString());
         grounded = true;
         inProgress = false;
@@ -51,8 +52,11 @@ public class Player : MonoBehaviour
     void control()
     {
        
-        // Hier wird bei jedem Frame entsprechend dem Keyboardinput die neue Position berechnet
+        
         float xInput = Input.GetAxis("Horizontal");
+        /* Hier wird bei jedem Frame entsprechend dem Keyboardinput die neue Position berechnet                     *
+         * goesleft ermittelt ob der Spieler sich nach links oder rechts fortbewegt                                 *
+         * Wenn sich der Zustand im Vergleich zum letzten Frame geändert hat, wird der Spielersprite gedreht        */
         if (xInput != 0)
         {
             bool xgoesleft = goesleft;

@@ -939,8 +939,9 @@ Transform:
   - {fileID: 911108334}
   - {fileID: 1296054265}
   - {fileID: 426338283}
+  - {fileID: 1220148456}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &358083385
 GameObject:
@@ -6903,7 +6904,7 @@ PrefabInstance:
     - target: {fileID: 224374824136518608, guid: ad84c37a896f54e1180d600bd7746b95,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 375.00003
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad84c37a896f54e1180d600bd7746b95, type: 3}
@@ -6928,7 +6929,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1220148456}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: UI and Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6942,16 +6943,16 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1220148455}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 429.8, y: 212.7, z: 100}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 429.8, y: 212.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1454130732}
   - {fileID: 413470279}
   - {fileID: 319064577}
   - {fileID: 739791115}
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_Father: {fileID: 334357816}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1296054264
 GameObject:
@@ -7268,7 +7269,7 @@ PrefabInstance:
     - target: {fileID: 224374824136518608, guid: ad84c37a896f54e1180d600bd7746b95,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 375.00003
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad84c37a896f54e1180d600bd7746b95, type: 3}
@@ -7347,7 +7348,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1686237891}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 300
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -7479,7 +7480,7 @@ Transform:
   - {fileID: 380680889}
   - {fileID: 773985138}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1625301401
 GameObject:

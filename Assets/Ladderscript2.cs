@@ -40,11 +40,19 @@ public class Ladderscript2 : MonoBehaviour
     {
         if (isColliding && Input.GetKey(KeyCode.UpArrow))
         {
+            // Wenn Player im Ladder Collider steht und nach oben drückt
             playerSprite.GetComponent<Rigidbody2D>().gravityScale = 0;
             playerSprite.GetComponent<Rigidbody2D>().velocity = new Vector3(playerSprite.GetComponent<Rigidbody2D>().velocity.x, 1.5f, 0f);
         }
+        else if (isColliding)
+        {
+            // Wenn Player im Ladder Collider steht und "fällt"
+            playerSprite.GetComponent<Rigidbody2D>().gravityScale = 0;
+            playerSprite.GetComponent<Rigidbody2D>().velocity = new Vector3(playerSprite.GetComponent<Rigidbody2D>().velocity.x, -1.5f, 0f);
+        }
         else
         {
+            // Reset, wenn Player nicht mehr im Collider steht
             playerSprite.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
     }

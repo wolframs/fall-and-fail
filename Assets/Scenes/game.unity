@@ -3714,7 +3714,7 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 584da8eaa869e1349afbf64a6d38fda6, type: 3}
-    volume: 0.6
+    volume: 0.3
     pitch: 1
     mixer: {fileID: 24300002, guid: 1fa64b5e3fa2e73459fc4f5166f5a125, type: 2}
     source: {fileID: 0}
@@ -4594,7 +4594,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 48
-      m_TileSpriteIndex: 27
+      m_TileSpriteIndex: 28
       m_TileMatrixIndex: 3
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -6349,10 +6349,10 @@ Tilemap:
     m_Data: {fileID: 21300124, guid: 2eeb0d4e8888f48459040781a511455e, type: 3}
   - m_RefCount: 2
     m_Data: {fileID: 21300002, guid: 2eeb0d4e8888f48459040781a511455e, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300088, guid: 2eeb0d4e8888f48459040781a511455e, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300088, guid: 2eeb0d4e8888f48459040781a511455e, type: 3}
   - m_RefCount: 10
     m_Data: {fileID: 21300004, guid: 2eeb0d4e8888f48459040781a511455e, type: 3}
   - m_RefCount: 3
@@ -6722,6 +6722,7 @@ MonoBehaviour:
   colli: {fileID: 0}
   goesleft: 0
   faktor: 1.5
+  xInput: 0
 --- !u!1 &1198975811
 GameObject:
   m_ObjectHideFlags: 0

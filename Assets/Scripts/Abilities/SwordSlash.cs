@@ -33,6 +33,15 @@ public class SwordSlash : Ability
         Physics2D.IgnoreCollision(GameObject.Find("SwordCollider").GetComponent<Collider2D>(),
             GameObject.Find("Tilemap").GetComponent<Collider2D>(),
             true);
+
+        // Kollisionen mit Coins ignorieren
+        CircleCollider2D[] coinColliders = GameObject.Find("Coincollection").GetComponentsInChildren<CircleCollider2D>();
+        foreach (CircleCollider2D coinCollider in coinColliders)
+        {
+            Physics2D.IgnoreCollision(GameObject.Find("SwordCollider").GetComponent<Collider2D>(),
+                coinCollider,
+                true);
+        }
     }
 
     private void Update()

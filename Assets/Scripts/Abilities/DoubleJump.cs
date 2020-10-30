@@ -11,6 +11,7 @@ public class DoubleJump : Ability
         get { return GameState.playerGrounded; }
         set { GameState.playerGrounded = value; }
     }
+    public bool allowDoublejump = true;
 
     public void Awake()
     {
@@ -40,7 +41,7 @@ public class DoubleJump : Ability
             _player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, GameState.jumpForceY));
             grounded = false;
         }
-        else if (!grounded && !inProgress)
+        else if (!grounded && !inProgress && allowDoublejump)
         {
             // Velocity resetten, bevor die Force vom zweiten Jump hinzugefügt wird
             _player.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 0f);

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class SwordSlash : Ability
 {
@@ -27,6 +28,11 @@ public class SwordSlash : Ability
         this.healthChange = 20;
         this.animationTime = 0.15f;
         this.staminaCost = 2;
+
+        // Alle Kollisionen mit der Tilemap ignorieren
+        Physics2D.IgnoreCollision(GameObject.Find("SwordCollider").GetComponent<Collider2D>(),
+            GameObject.Find("Tilemap").GetComponent<Collider2D>(),
+            true);
     }
 
     private void Update()

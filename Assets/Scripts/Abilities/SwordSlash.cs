@@ -26,7 +26,7 @@ public class SwordSlash : Ability
         this.inertia = Inertia.Instant;
         this.target = Target.Enemy;
         this.healthChange = 20;
-        this.animationTime = 0.15f;
+        this.animationTime = 0.25f;
         this.staminaCost = 2;
 
         // Alle Kollisionen mit der Tilemap ignorieren
@@ -46,17 +46,26 @@ public class SwordSlash : Ability
     public override void Use()
     {
         // Exit wenn wir bereits attackieren
-        if (!inProgress)
+        if (!inProgress && grounded)
             StartCoroutine(PerformSlash());
     }
 
     IEnumerator PerformSlash()
     {
+        // Start
         inProgress = true;
         Animate(true);
+
+        // Movement anhalten
+        _player.GetComponent<Player>().xInput = 0;
+
+        // Sound
         GameObject.Find("AudioMan").GetComponent<AudioManager>().Play("SwordAir");
-        //GameObject.Find("AudioTestSource").GetComponent<AudioSource>().Play();
+
+        // Timeout
         yield return new WaitForSeconds(this.animationTime);
+
+        // Ende
         Animate(false);
         inProgress = false;
     }

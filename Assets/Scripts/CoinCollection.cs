@@ -6,21 +6,10 @@ public class CoinCollection : MonoBehaviour
 {
     public GameObject gameobject;
     public CircleCollider2D colli;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     void OnTriggerEnter2D()
     {
         Destroy(gameobject);
         GameObject.Find("AudioMan").GetComponent<AudioManager>().Play("CoinPickup");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

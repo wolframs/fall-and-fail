@@ -45,7 +45,7 @@ public class GameState : MonoBehaviour
     // Game Settings
     public static float musicVolume;
     public static float sfxVolume;
-    public static int difficulty;
+    public static bool challenging;
 
     // Audio Mixers
     public AudioMixer musicMixer;
@@ -85,9 +85,9 @@ public class GameState : MonoBehaviour
         if (musicVolume == 0)
             musicVolume = 0.8f;
         sfxVolume = PlayerPrefs.GetFloat("volumeSFX", -5f);
-        difficulty = PlayerPrefs.GetInt("difficulty", 0);
+        challenging = PlayerPrefs.GetInt("difficulty", 0) != 0;
 
-        Debug.Log("Player Prefs: musicVolume - " + musicVolume + " | sfxVolume - " + sfxVolume + " | difficulty - " + difficulty);
+        Debug.Log("Player Prefs: musicVolume - " + musicVolume + " | sfxVolume - " + sfxVolume + " | challenging - " + challenging);
 
         // Audio Mixer getten und Lautstärke setzen
         if (musicMixer != null && sfxMixer != null)

@@ -10,9 +10,11 @@ public class Player : MonoBehaviour
     public Collider2D colli;
     public bool goesleft;
     public float faktor = 10;
+    public float xInput;
 
     // Die "Death Threshold" Höhe gibt an, ab welcher Position der Spieler als "heruntergefallen" gilt
     private float deathThreshold;
+    private GameState gameState;
 
     public bool grounded
     {
@@ -46,14 +48,13 @@ public class Player : MonoBehaviour
         if (transform.position.y <= deathThreshold)
             die();
         else
-            control(); 
+            if (!GameState.slashInProgress)
+                control(); 
     }
 
     void control()
     {
-       
-        
-        float xInput = Input.GetAxis("Horizontal");
+        xInput = Input.GetAxis("Horizontal");
         /* Hier wird bei jedem Frame entsprechend dem Keyboardinput die neue Position berechnet                     *
          * goesleft ermittelt ob der Spieler sich nach links oder rechts fortbewegt                                 *
          * Wenn sich der Zustand im Vergleich zum letzten Frame geändert hat, wird der Spielersprite gedreht        */

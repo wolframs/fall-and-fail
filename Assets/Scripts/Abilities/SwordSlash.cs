@@ -46,17 +46,19 @@ public class SwordSlash : Ability
     public override void Use()
     {
         // Exit wenn wir bereits attackieren
-        if (inProgress)
-            return;
-
-        StartCoroutine(PerformSlash());
+        if (!inProgress)
+            StartCoroutine(PerformSlash());
     }
 
     IEnumerator PerformSlash()
     {
+        inProgress = true;
         Animate(true);
+        GameObject.Find("AudioMan").GetComponent<AudioManager>().Play("SwordAir");
+        //GameObject.Find("AudioTestSource").GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(this.animationTime);
         Animate(false);
+        inProgress = false;
     }
 
     private void Animate(bool attacks)

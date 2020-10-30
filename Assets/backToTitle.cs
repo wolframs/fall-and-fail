@@ -14,7 +14,8 @@ public class backToTitle : MonoBehaviour
     }
 
     // Sauce: https://gamedevbeginner.com/how-to-fade-audio-in-unity-i-tested-every-method-this-ones-the-best
-    // "Mathf.Lerp(Start, Ende, dritter Parameter)" -> Linear Interpolation -> Berechnet eine Linerae zwischen Start und Ende und gibt einen Zwischenwert basierend auf der Quote des dritten Parameters zurück
+    // "Mathf.Lerp(Start, Ende, dritter Parameter)" -> Linear Interpolation -> Berechnet eine Linerae zwischen Start und Ende und gibt einen Zwischenwert
+    // auf dieser Lineare basierend auf der Quote des dritten Parameters zurück
     private IEnumerator MusicFadeOut()
     {
         float currentTime = 0;

@@ -13,7 +13,14 @@ public class backToTitle : MonoBehaviour
         StartCoroutine(MusicFadeOut());
     }
 
-    // Sauce: https://gamedevbeginner.com/how-to-fade-audio-in-unity-i-tested-every-method-this-ones-the-best
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            StartCoroutine(MusicFadeOut());
+        }
+    }
+
     // "Mathf.Lerp(Start, Ende, dritter Parameter)" -> Linear Interpolation -> Berechnet eine Linerae zwischen Start und Ende und gibt einen Zwischenwert
     // auf dieser Lineare basierend auf der Quote des dritten Parameters zurück
     private IEnumerator MusicFadeOut()

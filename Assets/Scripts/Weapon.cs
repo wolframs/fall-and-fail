@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    Animator animator;
+    Animator playerAnimator;
     private bool timeout = false;
     private float timer = 0.0f;
     private float waitTime = 1.1f;
 
     void Start()
     {
-         animator = this.GetComponentInParent<Animator>();
+         playerAnimator = this.GetComponentInParent<Animator>();
     }
 
     private void OnTriggerStay2D(Collider2D colli)
     {
-        if (animator.GetBool("Attacks") && colli.gameObject.name.Equals("Wizard") && !timeout)
+        if (playerAnimator.GetBool("Attacks") && colli.gameObject.name.Equals("Wizard") && !timeout)
         {
             // Cooldown initiieren
             timeout = true;

@@ -35,7 +35,9 @@ public class GameState : MonoBehaviour
     public static int wizHP
     {
         get { return _wizHP; }
-        set { 
+        set {
+            if (value < _wizHP)
+                TellWizardToTakeDamage();
             _wizHP = value;
             if (value > 0 && value < 5)
                 hearts[_wizHP - 1].SetActive(false);
@@ -43,6 +45,7 @@ public class GameState : MonoBehaviour
                 Destroy(GameObject.Find("Wizard"));
         }
     }
+    private static Enemy _enemyScript = null;
 
 
     // Jump Force
@@ -94,6 +97,8 @@ public class GameState : MonoBehaviour
 
     private void Start()
     {
+        GameObject wizard = GameObject.Find("Wizard");
+
         // HP & Stamina initialisieren
         try
         {
@@ -123,7 +128,7 @@ public class GameState : MonoBehaviour
         {
             hearts = new GameObject[3];
             int i = -1;
-            foreach (SpriteRenderer heart in GameObject.Find("Wizard").GetComponentsInChildren<SpriteRenderer>())
+            foreach (SpriteRenderer heart in wizard.GetComponentsInChildren<SpriteRenderer>())
             {
                 // ersten Sprite Renderer überspringen (sonst ist das der vom Wizard selbst)
                 if (i > -1)
@@ -134,6 +139,16 @@ public class GameState : MonoBehaviour
         catch
         {
             Debug.LogError("Herzchen nicht gefunden :(");
+        }
+
+        // Wizzy Script holen
+        try
+        {
+            _enemyScript = wizard.GetComponent<Enemy>();
+        }
+        catch
+        {
+            Debug.LogError("Wizzyboiii nicht gefunden");
         }
 
         // Wizard HP initialisieren
@@ -162,5 +177,10 @@ public class GameState : MonoBehaviour
         {
             Debug.LogError("Mixers not found!");
         }
+    }
+
+    private static void TellWizardToTakeDamage()
+    {
+        _enemyScript.TakeDamage();
     }
 }

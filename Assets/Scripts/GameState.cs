@@ -13,14 +13,18 @@ public class GameState : MonoBehaviour
     // Da eine "MovoBehaviour" derived class nicht static sein darf, ermöglichen wir hier die Erstellung einer öffentlichen statischen Instanz
     public static GameState instance = null;
 
+    // Player Animator
+    public static Animator playerAnimator = null;
+
     // Pause Status
     public static bool isPaused = false;
-    private static GameObject pausePanel = null;
+    public GameObject pausePanel;
 
     // Spielerstatus
     public static bool playerGrounded;
     public static bool jumpInProgress;
     public static bool slashInProgress;
+    public static bool playerFalling;
 
     // Coins
     public static Text coinDisplay = null;
@@ -34,6 +38,7 @@ public class GameState : MonoBehaviour
     }
 
     // Wiz HP
+    private static GameObject wizard;
     private static int _wizHP;
     private static GameObject[] hearts = null;
     public static int wizHP
@@ -106,17 +111,8 @@ public class GameState : MonoBehaviour
 
     private void Start()
     {
-        GameObject wizard = GameObject.Find("Wizard");
-
-        // Pause Panel
-        try
-        {
-            pausePanel = GameObject.Find("PausePanel");
-        }
-        catch
-        {
-            Debug.LogWarning("Pause Panel not found.");
-        }
+        // Player Animator holen
+        try { playerAnimator = GameObject.Find("Player").GetComponent<Animator>(); } catch { Debug.LogWarning("Player Animator not found."); }
 
         // HP & Stamina initialisieren
         try
@@ -142,6 +138,9 @@ public class GameState : MonoBehaviour
             Debug.LogWarning("Coin Display not found.");
         }
 
+        // Wizard holen
+        try { wizard = GameObject.Find("Wizard"); } catch { Debug.LogWarning("Evil enemy Wizard not found!"); }
+        
         // Wizard Herzen holen
         try
         {

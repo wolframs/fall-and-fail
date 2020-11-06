@@ -312,6 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ac2c4e41a3d61f46930f1b9886d6644, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausePanel: {fileID: 1955070745}
   musicMixer: {fileID: 24100000, guid: ebe3b4eafe524d34d9e0a75ecd7b2e21, type: 2}
   sfxMixer: {fileID: 24100000, guid: 1fa64b5e3fa2e73459fc4f5166f5a125, type: 2}
 --- !u!4 &125855354
@@ -8576,7 +8577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1955070746
 RectTransform:
   m_ObjectHideFlags: 0

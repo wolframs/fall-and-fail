@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,6 +17,9 @@ public class Player : MonoBehaviour
     private float deathThreshold;
     private GameState gameState;
 
+    private Vector2 playerVelocity;
+    private Animator playerAnimator;
+
     public bool grounded
     {
         get { return GameState.playerGrounded; }
@@ -28,12 +32,34 @@ public class Player : MonoBehaviour
         set { GameState.jumpInProgress = value; }
     }
     private float jumpForceY;
+
+    public bool falling
+    {
+        get { return GameState.playerFalling; }
+        set {
+            GameState.playerFalling = value;
+            playerAnimator.SetBool("Falls", value);
+        }
+    }
     
     // Start is called before the first frame update
     void Start()
     {
         init();
     }
+
+    private void init()
+    {
+        playerAnimator = this.GetComponent<Animator>();
+
+        // Hier wird initial die Ausrichtung des Spielers gesetzt
+        goesleft = false;
+
+        // Berechnung des "Death Thresholds", also der y-Position, ab der der Spieler als Gefallen gilt
+        float initialHeight = transform.position.y;
+        deathThreshold = initialHeight - 12;
+    }
+
     void OnTriggerEnter2D()
     {
         // Hier wird die Kollision mit dem Boden registriert und der Doppelsprung zurückgesetzt
@@ -89,18 +115,13 @@ public class Player : MonoBehaviour
             animate(0, !grounded);
         }
 
-    }
-
-
-
-    void init()
-    {
-        // Hier wird initial die Ausrichtung des Spielers gesetzt
-        goesleft = false;
-
-        // Berechnung des "Death Thresholds", also der y-Position, ab der der Spieler als Gefallen gilt
-        float initialHeight = transform.position.y;
-        deathThreshold = initialHeight - 12;
+        // Status "fallend" erkennen und reagieren
+        playerVelocity = rb2.velocity;
+        if (playerVelocity.y < 0)
+            falling = true;
+        else
+            falling = false;
+        Debug.Log(playerVelocity + " " + falling);
     }
 
     void die()
@@ -109,7 +130,7 @@ public class Player : MonoBehaviour
     }
     void animate(float xInput, bool jump)
     {
-        this.GetComponent<Animator>().SetFloat("Speed", Mathf.Abs(xInput));
-        this.GetComponent<Animator>().SetBool("Jumps", !GameState.playerGrounded);
+        playerAnimator.SetFloat("Speed", Mathf.Abs(xInput));
+        playerAnimator.SetBool("Jumps", !GameState.playerGrounded);
     }
 }

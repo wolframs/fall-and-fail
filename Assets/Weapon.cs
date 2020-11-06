@@ -17,7 +17,6 @@ public class Weapon : MonoBehaviour
     {
         if (animator.GetBool("Attacks") && colli.gameObject.name.Equals("Wizard"))
         {
-            Debug.Log("Treffer : " + colli.gameObject.name);
             Destroy(colli.gameObject);
         }
     }

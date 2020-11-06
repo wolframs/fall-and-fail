@@ -18,6 +18,17 @@ public class GameState : MonoBehaviour
     public static bool jumpInProgress;
     public static bool slashInProgress;
 
+    // Coins
+    public static Text coinDisplay = null;
+    private static int _coinsOwned;
+    public static int coinsOwned {
+        get { return _coinsOwned; }
+        set { 
+            _coinsOwned = value;
+            coinDisplay.text = value.ToString();
+        }
+    }
+
     // Jump Force
     public static float jumpForceY = 200;
 
@@ -78,6 +89,17 @@ public class GameState : MonoBehaviour
         catch
         {
             Debug.LogWarning("HPFiller and StaminaFiller not found.");
+        }
+
+        // Coin Display initialisieren
+        try
+        {
+            coinDisplay = GameObject.Find("coinText").GetComponent<Text>();
+            coinDisplay.text = "0";
+        }
+        catch
+        {
+            Debug.LogWarning("Coin Display not found.");
         }
 
         // PlayerPfers holen

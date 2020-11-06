@@ -15,7 +15,7 @@ public class Weapon : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D colli)
     {
-        if (animator.GetBool("Attacks"))
+        if (animator.GetBool("Attacks") && colli.gameObject.name.Equals("Wizard"))
         {
             Debug.Log("Treffer : " + colli.gameObject.name);
             Destroy(colli.gameObject);

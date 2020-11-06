@@ -17,6 +17,9 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         thisAnimator = this.GetComponent<Animator>();
+
+        // Coin Collider ignoren
+        Physics2D.IgnoreLayerCollision(8, 9); // Layer 8: Coins | Layer 9: Enemies
     }
 
     private void OnTriggerExit2D(Collider2D colli)

@@ -40,13 +40,7 @@ public class SwordSlash : Ability
             true);
 
         // Kollisionen mit Coins ignorieren
-        CircleCollider2D[] coinColliders = GameObject.Find("Coincollection").GetComponentsInChildren<CircleCollider2D>();
-        foreach (CircleCollider2D coinCollider in coinColliders)
-        {
-            Physics2D.IgnoreCollision(swordCollider,
-                coinCollider,
-                true);
-        }
+        Physics2D.IgnoreLayerCollision(8, 10); // Layer 8: Coins | Layer 10: Sword
     }
 
     private void Update()

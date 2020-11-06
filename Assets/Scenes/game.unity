@@ -145,6 +145,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278410, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1667996904903278414, guid: a55f02093f8f0e14c825140dd7b1fc82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -347,6 +352,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278410, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1667996904903278414, guid: a55f02093f8f0e14c825140dd7b1fc82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -502,6 +512,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278410, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1667996904903278414, guid: a55f02093f8f0e14c825140dd7b1fc82,
         type: 3}
@@ -3899,6 +3914,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278410, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1667996904903278414, guid: a55f02093f8f0e14c825140dd7b1fc82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3967,6 +3987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278410, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1667996904903278414, guid: a55f02093f8f0e14c825140dd7b1fc82,
         type: 3}
@@ -4112,7 +4137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 911108334}
   - component: {fileID: 911108335}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Coincollection
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6595,7 +6620,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1005298271}
   - component: {fileID: 1005298272}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Heart1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6848,7 +6873,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097240307}
   - component: {fileID: 1097240308}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Heart2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7216,7 +7241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1296054265}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemies
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7756,6 +7781,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278410, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278413, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1667996904903278414, guid: a55f02093f8f0e14c825140dd7b1fc82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8269,6 +8304,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278410, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 1667996904903278414, guid: a55f02093f8f0e14c825140dd7b1fc82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8649,7 +8689,7 @@ GameObject:
   - component: {fileID: 1994696102}
   - component: {fileID: 1994696101}
   - component: {fileID: 1994696104}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wizard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8713,7 +8753,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 4723107735738678597, guid: 6fc66c021eec74942b4e71a3fde4dc04,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -8776,7 +8816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9130460294cd21a479f53cacb15ae459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.25
+  speed: 0.45
   Trigger: {fileID: 1994696103}
   animationiTimeoutFrames: 49
 --- !u!61 &1994696103
@@ -8841,7 +8881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2004716921}
   - component: {fileID: 2004716922}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Heart3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8924,6 +8964,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278410, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278413, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1667996904903278414, guid: a55f02093f8f0e14c825140dd7b1fc82,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8992,6 +9042,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 1667996904903278410, guid: a55f02093f8f0e14c825140dd7b1fc82,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1667996904903278414, guid: a55f02093f8f0e14c825140dd7b1fc82,
         type: 3}

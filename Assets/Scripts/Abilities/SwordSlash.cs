@@ -4,7 +4,6 @@ using UnityEngine.Tilemaps;
 
 public class SwordSlash : Ability
 {
-    private Collider2D wizCollider = null;
     private Collider2D swordCollider = null;
 
     public bool inProgress
@@ -24,7 +23,6 @@ public class SwordSlash : Ability
         this._player = GameObject.Find("Player");
 
         // Zugehörige Collider cachen
-        wizCollider = GameObject.Find("WizardDamageCollider").GetComponent<Collider2D>();
         swordCollider = GameObject.Find("SwordCollider").GetComponent<Collider2D>();
 
         // Ability Properties

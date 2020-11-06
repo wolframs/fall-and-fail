@@ -4034,7 +4034,6 @@ GameObject:
   m_Component:
   - component: {fileID: 906917820}
   - component: {fileID: 906917821}
-  - component: {fileID: 906917822}
   m_Layer: 0
   m_Name: SwordCollider
   m_TagString: Untagged
@@ -4074,11 +4073,14 @@ EdgeCollider2D:
   m_Points:
   - {x: -0.221928, y: 0.4556368}
   - {x: 0.02965039, y: 0.52663815}
+  - {x: 0.10803223, y: 0.282135}
   - {x: 0.3857472, y: 0.3854512}
+  - {x: 0.27392578, y: 0.19799805}
   - {x: 0.55730903, y: 0.079754695}
-  - {x: 0.52584684, y: -0.2016222}
-  - {x: 0.37563038, y: -0.10936837}
-  - {x: 0.3463745, y: -0.22472756}
+  - {x: 0.29638672, y: 0.00970459}
+  - {x: 0.50701904, y: -0.21411133}
+  - {x: 0.21942139, y: -0.09063721}
+  - {x: 0.20898438, y: -0.25595093}
   - {x: 0.74160755, y: -0.40959537}
   - {x: 0.88755083, y: -0.26972175}
   - {x: 0.91246676, y: -0.025025383}
@@ -4086,18 +4088,6 @@ EdgeCollider2D:
   - {x: 0.46870363, y: 0.6553771}
   - {x: 0.07162613, y: 0.6560845}
   - {x: -0.22082758, y: 0.44885814}
---- !u!114 &906917822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 906917819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3476e77c4eff8bc49bd17b16c6aeca75, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &911108333
 GameObject:
   m_ObjectHideFlags: 0

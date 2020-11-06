@@ -4,6 +4,9 @@ using UnityEngine.Tilemaps;
 
 public class SwordSlash : Ability
 {
+    private Collider2D wizCollider = null;
+    private Collider2D swordCollider = null;
+
     public bool inProgress
     {
         get { return GameState.slashInProgress; }
@@ -20,6 +23,10 @@ public class SwordSlash : Ability
         inProgress = false;
         this._player = GameObject.Find("Player");
 
+        // Zugehörige Collider cachen
+        wizCollider = GameObject.Find("WizardDamageCollider").GetComponent<Collider2D>();
+        swordCollider = GameObject.Find("SwordCollider").GetComponent<Collider2D>();
+
         // Ability Properties
         this.abilityName = "Sword Slash";
         this.type = AbilityClass.Physical;
@@ -30,7 +37,7 @@ public class SwordSlash : Ability
         this.staminaCost = 2;
 
         // Alle Kollisionen mit der Tilemap ignorieren
-        Physics2D.IgnoreCollision(GameObject.Find("SwordCollider").GetComponent<Collider2D>(),
+        Physics2D.IgnoreCollision(swordCollider,
             GameObject.Find("Tilemap").GetComponent<Collider2D>(),
             true);
 
@@ -38,7 +45,7 @@ public class SwordSlash : Ability
         CircleCollider2D[] coinColliders = GameObject.Find("Coincollection").GetComponentsInChildren<CircleCollider2D>();
         foreach (CircleCollider2D coinCollider in coinColliders)
         {
-            Physics2D.IgnoreCollision(GameObject.Find("SwordCollider").GetComponent<Collider2D>(),
+            Physics2D.IgnoreCollision(swordCollider,
                 coinCollider,
                 true);
         }

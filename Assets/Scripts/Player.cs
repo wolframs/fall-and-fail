@@ -121,7 +121,6 @@ public class Player : MonoBehaviour
             falling = true;
         else
             falling = false;
-        Debug.Log(playerVelocity + " " + falling);
     }
 
     void die()

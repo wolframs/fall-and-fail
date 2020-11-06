@@ -51,4 +51,12 @@ public class AudioManager : MonoBehaviour
         Sound singleSound = Array.Find(sounds, sound => sound.name == name);
         singleSound.source.Play();
     }
+
+    public void PlayWithDelay(string name, float delay)
+    {
+        // Den zu spielenden Sound aus dem sounds[] Array finden
+        // (Array.Find in "sounds[]", Ergebnis soll sein Sound, wo sound.name == parameter "name")
+        Sound singleSound = Array.Find(sounds, sound => sound.name == name);
+        singleSound.source.PlayDelayed(delay);
+    }
 }

@@ -3678,6 +3678,36 @@ MonoBehaviour:
     pitch: 1
     mixer: {fileID: 24300002, guid: 1fa64b5e3fa2e73459fc4f5166f5a125, type: 2}
     source: {fileID: 0}
+  - name: WizzoTakesDamage
+    clip: {fileID: 8300000, guid: 18bc3b770ce2ef14ea49e2e74ca36d6d, type: 3}
+    volume: 0.681
+    pitch: 0.83
+    mixer: {fileID: 24300002, guid: 1fa64b5e3fa2e73459fc4f5166f5a125, type: 2}
+    source: {fileID: 0}
+  - name: WizzoDies
+    clip: {fileID: 8300000, guid: 19f7349641856c5438ed42009cb51d84, type: 3}
+    volume: 0.779
+    pitch: 1.1
+    mixer: {fileID: 24300002, guid: 1fa64b5e3fa2e73459fc4f5166f5a125, type: 2}
+    source: {fileID: 0}
+  - name: PlayerTakesDamage
+    clip: {fileID: 0}
+    volume: 0.3
+    pitch: 1
+    mixer: {fileID: 24300002, guid: 1fa64b5e3fa2e73459fc4f5166f5a125, type: 2}
+    source: {fileID: 0}
+  - name: PlayerDies
+    clip: {fileID: 0}
+    volume: 0.3
+    pitch: 1
+    mixer: {fileID: 24300002, guid: 1fa64b5e3fa2e73459fc4f5166f5a125, type: 2}
+    source: {fileID: 0}
+  - name: WizzoAttack1
+    clip: {fileID: 8300000, guid: 7365e537c78c56e47929ef1ce7696fb0, type: 3}
+    volume: 0.3
+    pitch: 1
+    mixer: {fileID: 24300002, guid: 1fa64b5e3fa2e73459fc4f5166f5a125, type: 2}
+    source: {fileID: 0}
 --- !u!1 &768291220
 GameObject:
   m_ObjectHideFlags: 0
@@ -4061,7 +4091,7 @@ GameObject:
   - component: {fileID: 906917820}
   - component: {fileID: 906917821}
   - component: {fileID: 906917822}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SwordCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6610,6 +6640,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2018222277}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &950962455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 950962456}
+  m_Layer: 5
+  m_Name: DialogueUI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &950962456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 950962455}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 230143.25, y: 112708.11, z: -51351.35}
+  m_LocalScale: {x: 270.27026, y: 270.27026, z: 270.27026}
+  m_Children: []
+  m_Father: {fileID: 1454130732}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005298270
 GameObject:
   m_ObjectHideFlags: 0
@@ -7761,6 +7821,7 @@ RectTransform:
   - {fileID: 1362158917}
   - {fileID: 1421286072}
   - {fileID: 1955070746}
+  - {fileID: 950962456}
   m_Father: {fileID: 1220148456}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8818,7 +8879,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.45
   Trigger: {fileID: 1994696103}
-  animationiTimeoutFrames: 49
+  animationTimeoutFrames: 49
 --- !u!61 &1994696103
 BoxCollider2D:
   m_ObjectHideFlags: 0

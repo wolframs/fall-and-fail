@@ -47,7 +47,7 @@ public class GameState : MonoBehaviour
         set {
             // Wenn HP fällt, TakeDamage() des Wizards aufrufen
             if (value < _wizHP)
-                TellWizardToTakeDamage();
+                _enemyScript.TakeDamage();
 
             _wizHP = value;
 
@@ -55,9 +55,9 @@ public class GameState : MonoBehaviour
             if (value > 0 && value <= 3)
                 hearts[_wizHP - 1].SetActive(false);
 
-            // Ggf. den ganzen Wizard kaputt machen (sollte ausgelagert werden nach Enemy.cs
+            // Ggf. stirbt Wizzo hier aber auch :(
             if (_wizHP <= 0)
-                Destroy(GameObject.Find("Wizard"));
+                _enemyScript.DieAHorribleDeath();
         }
     }
     private static Enemy _enemyScript = null;
@@ -195,11 +195,6 @@ public class GameState : MonoBehaviour
         {
             Debug.LogError("Mixers not found!");
         }
-    }
-
-    private static void TellWizardToTakeDamage()
-    {
-        _enemyScript.TakeDamage();
     }
 
     // Escape Taste für Spielpause abfangen

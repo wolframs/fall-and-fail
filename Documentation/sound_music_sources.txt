@@ -46,6 +46,10 @@ ____________________________
 "Hop 8"					https://freesound.org/people/felixyadomi/sounds/456374/
 "Jump"					https://freesound.org/people/acebrian/sounds/380471/
 
+"pain_scream_serious_2"	https://freesound.org/people/tschapajew/sounds/103533/
+"Getting hit hugh"		https://freesound.org/people/dersuperanton/sounds/434462/
+"male_hurt12"			https://freesound.org/people/micahlg/sounds/413173/
+
 
 
 

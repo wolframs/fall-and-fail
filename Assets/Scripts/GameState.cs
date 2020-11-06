@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 /// <summary>
-/// Diese Klasse funktioniert als zentraler "Informationsverteiler" für alle spielübergreifenden Einstellungen, Statuszustände und sonstige generelle, variable Optionen dar.
+/// Diese Klasse funktioniert als zentraler "Informationsverteiler" für alle spielübergreifenden Einstellungen, Statuszustände und sonstige generelle, variable Optionen.
 /// </summary>
 
 public class GameState : MonoBehaviour
@@ -56,7 +56,6 @@ public class GameState : MonoBehaviour
         }
     }
     private static Enemy _enemyScript = null;
-
 
     // Jump Force
     public static float jumpForceY = 200;
@@ -150,7 +149,7 @@ public class GameState : MonoBehaviour
             int i = -1;
             foreach (SpriteRenderer heart in wizard.GetComponentsInChildren<SpriteRenderer>())
             {
-                // ersten Sprite Renderer überspringen (sonst ist das der vom Wizard selbst)
+                // ersten Sprite Renderer überspringen (sonst ist das der vom Wizard selbst) - Diese Umsetzung ist hässlich, das weiß ich auch, aber ich hab keinen Nerv für den Mini Käse hier - ws
                 if (i > -1)
                     hearts[i] = heart.gameObject;
                 i++;

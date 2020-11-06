@@ -31,7 +31,17 @@ public class GameState : MonoBehaviour
 
     // Wiz HP
     private static int _wizHP;
-    public static int wizHP;
+    private static GameObject[] hearts;
+    public static int wizHP
+    {
+        get { return _wizHP; }
+        set { 
+            _wizHP = value;
+            hearts[_wizHP].SetActive(false);
+            if (_wizHP <= 0)
+                Destroy(GameObject.Find("Wizard"));
+        }
+    }
 
 
     // Jump Force
@@ -106,6 +116,14 @@ public class GameState : MonoBehaviour
         {
             Debug.LogWarning("Coin Display not found.");
         }
+
+        // Wizard Herzen holen
+        hearts[0] = GameObject.Find("Heart1");
+        hearts[1] = GameObject.Find("Heart2");
+        hearts[2] = GameObject.Find("Heart3");
+
+        // Wizard HP initialisieren
+        wizHP = 3;
 
         // PlayerPfers holen
         musicVolume = PlayerPrefs.GetFloat("volumeMusic", -5f);

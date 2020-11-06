@@ -36,11 +36,17 @@ public class GameState : MonoBehaviour
     {
         get { return _wizHP; }
         set {
+            // Wenn HP fällt, TakeDamage() des Wizards aufrufen
             if (value < _wizHP)
                 TellWizardToTakeDamage();
+
             _wizHP = value;
+
+            // Herzchen des Wizzies reduzieren
             if (value > 0 && value < 5)
                 hearts[_wizHP - 1].SetActive(false);
+
+            // Ggf. den ganzen Wizard kaputt machen (sollte ausgelagert werden nach Enemy.cs
             if (_wizHP <= 0)
                 Destroy(GameObject.Find("Wizard"));
         }

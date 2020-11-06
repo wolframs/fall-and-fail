@@ -13,6 +13,10 @@ public class GameState : MonoBehaviour
     // Da eine "MovoBehaviour" derived class nicht static sein darf, ermöglichen wir hier die Erstellung einer öffentlichen statischen Instanz
     public static GameState instance = null;
 
+    // Pause Status
+    public static bool isPaused = false;
+    private static GameObject pausePanel = null;
+
     // Spielerstatus
     public static bool playerGrounded;
     public static bool jumpInProgress;
@@ -43,7 +47,7 @@ public class GameState : MonoBehaviour
             _wizHP = value;
 
             // Herzchen des Wizzies reduzieren
-            if (value > 0 && value < 5)
+            if (value > 0 && value <= 3)
                 hearts[_wizHP - 1].SetActive(false);
 
             // Ggf. den ganzen Wizard kaputt machen (sollte ausgelagert werden nach Enemy.cs
@@ -105,6 +109,16 @@ public class GameState : MonoBehaviour
     {
         GameObject wizard = GameObject.Find("Wizard");
 
+        // Pause Panel
+        try
+        {
+            pausePanel = GameObject.Find("PausePanel");
+        }
+        catch
+        {
+            Debug.LogWarning("Pause Panel not found.");
+        }
+
         // HP & Stamina initialisieren
         try
         {
@@ -144,7 +158,7 @@ public class GameState : MonoBehaviour
         }
         catch
         {
-            Debug.LogError("Herzchen nicht gefunden :(");
+            Debug.LogWarning("Herzchen nicht gefunden :(");
         }
 
         // Wizzy Script holen
@@ -154,7 +168,7 @@ public class GameState : MonoBehaviour
         }
         catch
         {
-            Debug.LogError("Wizzyboiii nicht gefunden");
+            Debug.LogWarning("Wizzyboiii nicht gefunden");
         }
 
         // Wizard HP initialisieren
@@ -188,5 +202,24 @@ public class GameState : MonoBehaviour
     private static void TellWizardToTakeDamage()
     {
         _enemyScript.TakeDamage();
+    }
+
+    // Escape Taste für Spielpause abfangen
+    private void OnGUI()
+    {
+        if (Event.current.Equals(Event.KeyboardEvent("escape")))
+        {
+            if (!isPaused)
+            {
+                Time.timeScale = 0;
+                isPaused = true;
+            }
+            else
+            {
+                Time.timeScale = 1;
+                isPaused = false;
+            }
+            pausePanel.SetActive(isPaused);
+        }
     }
 }

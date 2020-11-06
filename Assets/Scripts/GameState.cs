@@ -31,13 +31,14 @@ public class GameState : MonoBehaviour
 
     // Wiz HP
     private static int _wizHP;
-    private static GameObject[] hearts;
+    private static GameObject[] hearts = null;
     public static int wizHP
     {
         get { return _wizHP; }
         set { 
             _wizHP = value;
-            hearts[_wizHP].SetActive(false);
+            if (value > 0 && value < 5)
+                hearts[_wizHP - 1].SetActive(false);
             if (_wizHP <= 0)
                 Destroy(GameObject.Find("Wizard"));
         }
@@ -118,12 +119,25 @@ public class GameState : MonoBehaviour
         }
 
         // Wizard Herzen holen
-        hearts[0] = GameObject.Find("Heart1");
-        hearts[1] = GameObject.Find("Heart2");
-        hearts[2] = GameObject.Find("Heart3");
+        try
+        {
+            hearts = new GameObject[3];
+            int i = -1;
+            foreach (SpriteRenderer heart in GameObject.Find("Wizard").GetComponentsInChildren<SpriteRenderer>())
+            {
+                // ersten Sprite Renderer überspringen (sonst ist das der vom Wizard selbst)
+                if (i > -1)
+                    hearts[i] = heart.gameObject;
+                i++;
+            }
+        }
+        catch
+        {
+            Debug.LogError("Herzchen nicht gefunden :(");
+        }
 
         // Wizard HP initialisieren
-        wizHP = 3;
+        wizHP = 4;
 
         // PlayerPfers holen
         musicVolume = PlayerPrefs.GetFloat("volumeMusic", -5f);
@@ -131,6 +145,10 @@ public class GameState : MonoBehaviour
             musicVolume = 0.8f;
         sfxVolume = PlayerPrefs.GetFloat("volumeSFX", -5f);
         challenging = PlayerPrefs.GetInt("difficulty", 0) != 0;
+
+        // Difficulty gesteuerte Variablen anpassen
+        if (challenging)
+            jumpForceY = 120;
 
         Debug.Log("Player Prefs: musicVolume - " + musicVolume + " | sfxVolume - " + sfxVolume + " | challenging - " + challenging);
 

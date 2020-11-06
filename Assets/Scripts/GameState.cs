@@ -29,6 +29,11 @@ public class GameState : MonoBehaviour
         }
     }
 
+    // Wiz HP
+    private static int _wizHP;
+    public static int wizHP;
+
+
     // Jump Force
     public static float jumpForceY = 200;
 

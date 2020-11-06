@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour
          animator = this.GetComponentInParent<Animator>();
     }
 
-    private void OnTriggerEnter2D(Collider2D colli)
+    private void OnTriggerStay2D(Collider2D colli)
     {
         if (animator.GetBool("Attacks"))
         {

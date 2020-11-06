@@ -11,5 +11,6 @@ public class CoinCollection : MonoBehaviour
     {
         Destroy(gameobject);
         GameObject.Find("AudioMan").GetComponent<AudioManager>().Play("CoinPickup");
+        GameState.coinsOwned += 1;
     }
 }

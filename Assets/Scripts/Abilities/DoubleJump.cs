@@ -2,6 +2,9 @@
 
 public class DoubleJump : Ability
 {
+    private AudioManager audioManager;
+    private int halfCost = 0;
+
     public bool inProgress
     {
         get { return GameState.jumpInProgress; }
@@ -13,7 +16,7 @@ public class DoubleJump : Ability
     }
     public bool allowDoublejump = true;
 
-    public void Awake()
+    public void Start()
     {
         inProgress = false;
         this._player = GameObject.Find("Player");
@@ -24,9 +27,14 @@ public class DoubleJump : Ability
         this.target = Target.Self;
         this.type = AbilityClass.Movement;
         if (GameState.challenging)
-            this.staminaCost = 10;
+        {
+            this.staminaCost = 9;
+            halfCost = 3;
+        }
         else
-            this.staminaCost = 5;
+            this.staminaCost = 6;
+
+        audioManager = GameObject.Find("AudioMan").GetComponent<AudioManager>();
     }
 
     public void Update()
@@ -43,6 +51,8 @@ public class DoubleJump : Ability
         {
             _player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, GameState.jumpForceY));
             grounded = false;
+            audioManager.Play("Jump");
+            GameState.playerStamina -= halfCost;
         }
         else if (!grounded && !inProgress && allowDoublejump)
         {
@@ -51,6 +61,7 @@ public class DoubleJump : Ability
             inProgress = true;
             _player.GetComponent<Rigidbody2D>().AddForce(new Vector2(0f, GameState.jumpForceY));
             GameState.playerStamina -= staminaCost;
+            audioManager.Play("Jump");
         }
         Animate(0, !grounded);
     }

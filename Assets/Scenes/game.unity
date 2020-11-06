@@ -3674,8 +3674,8 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 584da8eaa869e1349afbf64a6d38fda6, type: 3}
-    volume: 0.3
-    pitch: 1
+    volume: 0.471
+    pitch: 1.26
     mixer: {fileID: 24300002, guid: 1fa64b5e3fa2e73459fc4f5166f5a125, type: 2}
     source: {fileID: 0}
   - name: WizzoTakesDamage

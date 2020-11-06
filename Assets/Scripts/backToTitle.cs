@@ -8,6 +8,15 @@ public class backToTitle : MonoBehaviour
     public AudioSource bgMusic;
     private float duration = 2f;
 
+    private void Start()
+    {
+        // Zähler usw. zurücksetzen
+        GameState.coinsOwned = 0;
+        GameState.playerHP = 0;
+        GameState.playerStamina = 0;
+        GameState.wizHP = 4;
+    }
+
     public void TitleTransition()
     {
         StartCoroutine(MusicFadeOut());

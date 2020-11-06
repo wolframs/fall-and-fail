@@ -33,7 +33,8 @@ public class GameState : MonoBehaviour
         get { return _coinsOwned; }
         set { 
             _coinsOwned = value;
-            coinDisplay.text = value.ToString();
+            if (coinDisplay != null)
+                coinDisplay.text = value.ToString();
         }
     }
 
@@ -73,7 +74,8 @@ public class GameState : MonoBehaviour
     public static int playerHP {
         set {
             _playerHP = value;
-            HPFiller.fillAmount = (100 / value);
+            if (HPFiller != null)
+                HPFiller.fillAmount = _playerHP / 100f;
         }
         get { return _playerHP; }
     }
@@ -81,7 +83,8 @@ public class GameState : MonoBehaviour
         set
         {
             _playerStamina = value;
-            StaminaFiller.fillAmount = (100 / value);
+            if (StaminaFiller != null)
+                StaminaFiller.fillAmount = _playerStamina / 100f;
         }
         get { return _playerStamina; }
     }
@@ -181,7 +184,7 @@ public class GameState : MonoBehaviour
 
         // Difficulty gesteuerte Variablen anpassen
         if (challenging)
-            jumpForceY = 120;
+            jumpForceY = 170;
 
         Debug.Log("Player Prefs: musicVolume - " + musicVolume + " | sfxVolume - " + sfxVolume + " | challenging - " + challenging);
 

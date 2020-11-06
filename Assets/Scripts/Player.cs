@@ -20,6 +20,9 @@ public class Player : MonoBehaviour
     private Vector2 playerVelocity;
     private Animator playerAnimator;
 
+    private float staminaTimer = 0f;
+    private int staminaRecoverAmount = 2;
+
     public bool grounded
     {
         get { return GameState.playerGrounded; }
@@ -58,6 +61,10 @@ public class Player : MonoBehaviour
         // Berechnung des "Death Thresholds", also der y-Position, ab der der Spieler als Gefallen gilt
         float initialHeight = transform.position.y;
         deathThreshold = initialHeight - 12;
+
+        // Stamina Regeneration an Difficulty koppeln
+        if (GameState.challenging)
+            staminaRecoverAmount = 1;
     }
 
     void OnTriggerEnter2D()
@@ -75,7 +82,9 @@ public class Player : MonoBehaviour
             die();
         else
             if (!GameState.slashInProgress)
-                control(); 
+                control();
+
+        StaminaRegen();
     }
 
     void control()
@@ -131,5 +140,18 @@ public class Player : MonoBehaviour
     {
         playerAnimator.SetFloat("Speed", Mathf.Abs(xInput));
         playerAnimator.SetBool("Jumps", !GameState.playerGrounded);
+    }
+
+    private void StaminaRegen()
+    {
+        if (GameState.playerStamina < 100)
+        {
+            staminaTimer += Time.deltaTime;
+            if (staminaTimer > 1f)
+            {
+                staminaTimer = 0f;
+                GameState.playerStamina += staminaRecoverAmount;
+            }
+        }
     }
 }
